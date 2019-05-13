@@ -1,0 +1,1 @@
+<meter {...$$props}><slot /></meter>

@@ -1,0 +1,1 @@
+<dialog {...$$props}><slot /></dialog>

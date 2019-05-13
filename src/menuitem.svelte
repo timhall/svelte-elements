@@ -1,0 +1,1 @@
+<menuitem {...$$props}><slot /></menuitem>

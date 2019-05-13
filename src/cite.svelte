@@ -1,0 +1,1 @@
+<cite {...$$props}><slot /></cite>

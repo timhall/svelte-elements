@@ -1,0 +1,1 @@
+<main {...$$props}><slot /></main>

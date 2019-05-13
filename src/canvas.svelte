@@ -1,0 +1,1 @@
+<canvas {...$$props}><slot /></canvas>

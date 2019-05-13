@@ -1,0 +1,1 @@
+<figure {...$$props}><slot /></figure>

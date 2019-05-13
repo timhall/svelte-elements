@@ -1,0 +1,1 @@
+<time {...$$props}><slot /></time>

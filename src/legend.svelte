@@ -1,0 +1,1 @@
+<legend {...$$props}><slot /></legend>

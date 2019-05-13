@@ -1,0 +1,1 @@
+<select {...$$props}><slot /></select>

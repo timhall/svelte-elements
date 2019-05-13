@@ -1,0 +1,1 @@
+<audio {...$$props}><slot /></audio>

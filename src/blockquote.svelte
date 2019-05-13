@@ -1,0 +1,1 @@
+<blockquote {...$$props}><slot /></blockquote>

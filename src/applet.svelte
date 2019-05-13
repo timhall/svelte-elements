@@ -1,0 +1,1 @@
+<applet {...$$props}><slot /></applet>

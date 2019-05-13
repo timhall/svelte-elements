@@ -1,0 +1,1 @@
+<progress {...$$props}><slot /></progress>

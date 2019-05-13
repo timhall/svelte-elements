@@ -1,0 +1,1 @@
+<table {...$$props}><slot /></table>

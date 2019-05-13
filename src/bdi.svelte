@@ -1,0 +1,1 @@
+<bdi {...$$props}><slot /></bdi>

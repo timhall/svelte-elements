@@ -1,0 +1,1 @@
+<section {...$$props}><slot /></section>

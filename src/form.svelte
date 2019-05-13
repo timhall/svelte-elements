@@ -1,0 +1,1 @@
+<form {...$$props}><slot /></form>

@@ -1,0 +1,1 @@
+<video {...$$props}><slot /></video>

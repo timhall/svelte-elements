@@ -1,0 +1,1 @@
+<dir {...$$props}><slot /></dir>

@@ -1,0 +1,1 @@
+<ol {...$$props}><slot /></ol>

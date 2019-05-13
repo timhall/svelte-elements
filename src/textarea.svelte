@@ -1,0 +1,1 @@
+<textarea {...$$props}><slot /></textarea>

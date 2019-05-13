@@ -1,0 +1,36 @@
+{
+  "name": "svelte-elements",
+  "version": "0.0.0",
+  "author": "Tim Hall <tim.hall.engr@gmail.com>",
+  "license": "MIT",
+  "description": "Component wrappers for built-in html elements",
+  "repository": "https://github.com/timhall/svelte-elements.git",
+  "main": "dist/svelte-elements.cjs.js",
+  "module": "dist/svelte-elements.es.js",
+  "svelte": "src/index.js",
+  "keywords": [
+    "svelte",
+    "elements",
+    "html"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "svelte": "^3.0.0"
+  },
+  "devDependencies": {
+    "rollup": "^1.11.3",
+    "rollup-plugin-filesize": "^6.0.1",
+    "rollup-plugin-svelte": "^5.0.3",
+    "svelte": "^3.0.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 100
+  },
+  "files": [
+    "dist"
+  ]
+}

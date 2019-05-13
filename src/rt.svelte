@@ -1,0 +1,1 @@
+<rt {...$$props}><slot /></rt>

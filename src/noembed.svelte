@@ -1,0 +1,1 @@
+<noembed {...$$props}><slot /></noembed>

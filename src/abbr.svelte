@@ -1,0 +1,1 @@
+<abbr {...$$props}><slot /></abbr>

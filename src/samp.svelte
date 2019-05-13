@@ -1,0 +1,1 @@
+<samp {...$$props}><slot /></samp>
