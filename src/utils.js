@@ -26,24 +26,3 @@ function listen(node, listeners) {
 function unsubscribe(subscriptions) {
   return subscriptions.forEach(unsubscribe => unsubscribe());
 }
-
-export function optional(node, attributes) {
-  set(node, attributes);
-
-  return {
-    update(attributes) {
-      set(node, attributes);
-    }
-  };
-}
-
-function set(node, attributes) {
-  Object.keys(attributes).forEach(name => {
-    const value = attributes[name];
-    if (value != null) {
-      node.setAttribute(name, value);
-    } else {
-      node.removeAttribute(name);
-    }
-  });
-}
