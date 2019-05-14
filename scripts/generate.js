@@ -29,8 +29,8 @@ for (const tag of tags) {
   const data = dedent`<script>
     import { subscribe } from './utils';
 
-    export let el;
-    export let listen;
+    export let el = undefined;
+    export let listen = undefined;
   </script>
 
   <${tag} bind:this={el} ${events} {...$$props}${isVoid(tag) ? ' />' : `><slot /></${tag}>`}\n`;
