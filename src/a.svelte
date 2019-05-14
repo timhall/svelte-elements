@@ -1,9 +1,11 @@
 <script>
-  import { subscribe } from './utils';
+  import { subscribe, optional } from './utils';
 
   export let href;
   export let el = undefined;
   export let listen = undefined;
 </script>
 
-<a href={href || ''} bind:this={el} on:focus on:blur on:keypress on:click use:subscribe={listen} {...$$props}><slot /></a>
+<a href={href} use:optional={{href}} bind:this={el} on:focus on:blur on:keypress on:click use:subscribe={listen} {...$$props}>
+  <slot />
+</a>
