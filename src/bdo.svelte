@@ -1,5 +1,8 @@
 <script>
+  import { subscribe } from './utils';
+
   export let el;
+  export let listen;
 </script>
 
-<bdo bind:this={el} on:focus on:blur on:keypress on:click {...$$props}><slot /></bdo>
+<bdo bind:this={el} on:focus on:blur on:keypress on:click use:subscribe={listen} {...$$props}><slot /></bdo>

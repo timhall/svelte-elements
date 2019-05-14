@@ -1,5 +1,8 @@
 <script>
+  import { subscribe } from './utils';
+
   export let el;
+  export let listen;
 </script>
 
-<noembed bind:this={el} on:focus on:blur on:keypress on:click {...$$props}><slot /></noembed>
+<noembed bind:this={el} on:focus on:blur on:keypress on:click use:subscribe={listen} {...$$props}><slot /></noembed>

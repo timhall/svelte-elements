@@ -1,10 +1,10 @@
-export function listen(node, listeners) {
-  let subscriptions = subscribe(node, listeners);
+export function subscribe(node, listeners) {
+  let subscriptions = listen(node, listeners);
 
   return {
     update(listeners) {
       unsubscribe(subscriptions);
-      subscriptions = subscribe(node, listeners);
+      subscriptions = listen(node, listeners);
     },
     destroy() {
       unsubscribe(subscriptions);
@@ -12,7 +12,9 @@ export function listen(node, listeners) {
   };
 }
 
-function subscribe(node, listeners) {
+function listen(node, listeners) {
+  if (!listeners) return [];
+
   return Object.keys(listeners).map(event => {
     const handler = listeners[event];
 

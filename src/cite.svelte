@@ -1,5 +1,8 @@
 <script>
+  import { subscribe } from './utils';
+
   export let el;
+  export let listen;
 </script>
 
-<cite bind:this={el} on:focus on:blur on:keypress on:click {...$$props}><slot /></cite>
+<cite bind:this={el} on:focus on:blur on:keypress on:click use:subscribe={listen} {...$$props}><slot /></cite>

@@ -1,5 +1,8 @@
 <script>
+  import { subscribe } from './utils';
+
   export let el;
+  export let listen;
 </script>
 
-<address bind:this={el} on:focus on:blur on:keypress on:click {...$$props}><slot /></address>
+<address bind:this={el} on:focus on:blur on:keypress on:click use:subscribe={listen} {...$$props}><slot /></address>

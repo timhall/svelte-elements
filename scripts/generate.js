@@ -24,13 +24,16 @@ for (const tag of tags) {
     continue;
   }
 
-  const events = matchingEvents(tag);
+  const events = `${matchingEvents(tag)}use:subscribe={listen}`;
 
   const data = dedent`<script>
+    import { subscribe } from './utils';
+
     export let el;
+    export let listen;
   </script>
 
-  <${tag} bind:this={el} ${events}{...$$props}${isVoid(tag) ? ' />' : `><slot /></${tag}>`}\n`;
+  <${tag} bind:this={el} ${events} {...$$props}${isVoid(tag) ? ' />' : `><slot /></${tag}>`}\n`;
 
   writeFileSync(path, data, 'utf8');
   list.add(`export { default as ${capitalize(tag)} } from './${tag}.svelte';`);
@@ -86,7 +89,19 @@ function matchingEvents(tag) {
 }
 
 function isVoid(tag) {
-  return ['br', 'col', 'embed', 'hr', 'input', 'param', 'source', 'track', 'wbr'].includes(tag);
+  return [
+    'area',
+    'br',
+    'col',
+    'embed',
+    'hr',
+    'img',
+    'input',
+    'param',
+    'source',
+    'track',
+    'wbr'
+  ].includes(tag);
 }
 
 function allTags() {
@@ -125,7 +140,8 @@ function allTags() {
     'em',
     'embed',
     'fieldset',
-    'figcaption',
+    // Unlikely to need, throws annoying a11y warning
+    // 'figcaption',
     'figure',
     'footer',
     'form',
