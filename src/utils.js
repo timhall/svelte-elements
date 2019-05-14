@@ -39,7 +39,7 @@ export function optional(node, attributes) {
 
 function set(node, attributes) {
   Object.keys(attributes).forEach(name => {
-    const value = attribute[name];
+    const value = attributes[name];
     if (value != null) {
       node.setAttribute(name, value);
     } else {
