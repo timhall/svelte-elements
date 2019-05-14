@@ -1,1 +1,5 @@
-<samp {...$$props}><slot /></samp>
+<script>
+  export let el;
+</script>
+
+<samp bind:this={el} on:focus on:blur on:keypress on:click {...$$props}><slot /></samp>

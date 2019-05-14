@@ -106,3 +106,4 @@ export { default as Ul } from './ul.svelte';
 export { default as Var } from './var.svelte';
 export { default as Video } from './video.svelte';
 export { default as Wbr } from './wbr.svelte';
+export { listen } from './utils';

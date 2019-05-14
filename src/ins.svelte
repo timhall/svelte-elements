@@ -1,1 +1,5 @@
-<ins {...$$props}><slot /></ins>
+<script>
+  export let el;
+</script>
+
+<ins bind:this={el} on:focus on:blur on:keypress on:click {...$$props}><slot /></ins>

@@ -1,1 +1,5 @@
-<meter {...$$props}><slot /></meter>
+<script>
+  export let el;
+</script>
+
+<meter bind:this={el} on:focus on:blur on:keypress on:click {...$$props}><slot /></meter>

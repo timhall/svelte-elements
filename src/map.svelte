@@ -1,1 +1,5 @@
-<map {...$$props}><slot /></map>
+<script>
+  export let el;
+</script>
+
+<map bind:this={el} on:focus on:blur on:keypress on:click {...$$props}><slot /></map>

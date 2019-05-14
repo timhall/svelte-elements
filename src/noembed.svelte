@@ -1,1 +1,5 @@
-<noembed {...$$props}><slot /></noembed>
+<script>
+  export let el;
+</script>
+
+<noembed bind:this={el} on:focus on:blur on:keypress on:click {...$$props}><slot /></noembed>

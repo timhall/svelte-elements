@@ -1,1 +1,5 @@
-<datalist {...$$props}><slot /></datalist>
+<script>
+  export let el;
+</script>
+
+<datalist bind:this={el} on:focus on:blur on:keypress on:click {...$$props}><slot /></datalist>
