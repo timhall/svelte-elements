@@ -1,6 +1,6 @@
 {
   "name": "svelte-elements",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Tim Hall <tim.hall.engr@gmail.com>",
   "license": "MIT",
   "description": "Component wrappers for built-in html elements",
