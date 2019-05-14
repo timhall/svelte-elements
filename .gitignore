@@ -1,2 +1,3 @@
 dist
+examples/public/bundle*
 node_modules
