@@ -6,10 +6,14 @@
   $: A_el_correct = A_el instanceof HTMLElement;
 
   let Input_value;
+  let Input_on_input_value;
+  let Input_on_change_value;
   let Input_focused = false;
   let Input_keydown = false;
 
   let Textarea_value;
+  let Textarea_on_input_value;
+  let Textarea_on_change_value;
   let Textarea_focused = false;
   let Textarea_keydown = false;
 </script>
@@ -31,6 +35,8 @@
   <Input
     type="text"
     bind:value={Input_value}
+    on:input={(event) => Input_on_input_value = event.target.value}
+    on:change={(event) => Input_on_change_value = event.target.value}
     on:focus={() => Input_focused = true}
     listen={{ keydown: () => Input_keydown = true}}
   />
@@ -38,6 +44,8 @@
 
 <h3>Results</h3>
 <div><label>bind:value: <input type="input" disabled value={Input_value} /></label></div>
+<div><label>on:input: <input type="input" disabled value={Input_on_input_value} /></label></div>
+<div><label>on:change: <input type="input" disabled value={Input_on_change_value} /></label></div>
 <label><input type="checkbox" disabled bind:checked={Input_focused} /> on:focus</label><br>
 <label><input type="checkbox" disabled bind:checked={Input_keydown} /> listen: keydown</label>
 
@@ -45,11 +53,15 @@
 <Textarea
   type="text"
   bind:value={Textarea_value}
+  on:input={(event) => Textarea_on_input_value = event.target.value}
+  on:change={(event) => Textarea_on_change_value = event.target.value}
   on:focus={() => Textarea_focused = true}
   listen={{ keydown: () => Textarea_keydown = true }}
 />
 
 <h3>Results</h3>
 <div><label>bind:value: <input type="input" disabled value={Textarea_value} /></label></div>
+<div><label>on:input: <input type="input" disabled value={Textarea_on_input_value} /></label></div>
+<div><label>on:change: <input type="input" disabled value={Textarea_on_change_value} /></label></div>
 <label><input type="checkbox" disabled bind:checked={Textarea_focused} /> on:focus</label><br>
 <label><input type="checkbox" disabled bind:checked={Textarea_keydown} /> listen: keydown</label>

@@ -34,7 +34,10 @@ Instead of `bind:this={ref}`, use `bind:el={ref}`. `this` points to the wrapper 
 
 ### `listen`
 
-Forwarding events from the native element through the wrapper element comes with a cost, so to avoid adding extra event handlers only a few are forwarded. For all elements except `<br>` and `<hr>`, `on:focus`, `on:blur`, `on:keypress`, and `on:click` are forwarded. For `audio` and `video`, `on:pause` and `on:play` are also forwarded.
+Forwarding events from the native element through the wrapper element comes with a cost, so to avoid adding extra event handlers only a few are forwarded.
+For all elements except `<br>` and `<hr>`, `on:focus`, `on:blur`, `on:keypress`, and `on:click` are forwarded.
+For `input` and `textarea`, `on:input` and `on:change` are also forwarded.
+For `audio` and `video`, `on:pause` and `on:play` are also forwarded.
 
 For any other events that need to be listened to, you can use the `listen` property:
 

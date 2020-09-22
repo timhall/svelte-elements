@@ -13,6 +13,8 @@
   on:blur
   on:keypress
   on:click
+  on:input
+  on:change
   use:subscribe={listen}
   {...$$restProps}
 />
