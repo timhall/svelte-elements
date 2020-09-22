@@ -10,7 +10,7 @@
 </script>
 
 <h2>A</h2>
-<A bind:el href="#" on:click|preventDefault={() => clicked = true}>Howdy!</A>
+<A bind:el href="#" on:click={() => clicked = true}>Howdy!</A>
 
 <h3>Results</h3>
 <label><input type="checkbox" disabled bind:checked={clicked} /> Click</label><br>
