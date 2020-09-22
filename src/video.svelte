@@ -5,4 +5,4 @@
   export let listen = undefined;
 </script>
 
-<video bind:this={el} on:focus on:blur on:keypress on:click on:pause on:play use:subscribe={listen} {...$$props}><slot /></video>
+<video bind:this={el} on:focus on:blur on:keypress on:click on:pause on:play use:subscribe={listen} {...$$restProps}><slot /></video>

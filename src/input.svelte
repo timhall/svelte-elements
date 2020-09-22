@@ -14,5 +14,5 @@
   on:keypress
   on:click
   use:subscribe={listen}
-  {...$$props}
+  {...$$restProps}
 />
