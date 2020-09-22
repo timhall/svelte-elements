@@ -3,6 +3,18 @@
 
   export let el = undefined;
   export let listen = undefined;
+  export let value = '';
 </script>
 
-<textarea bind:this={el} on:focus on:blur on:keypress on:click use:subscribe={listen} {...$$props}><slot /></textarea>
+<textarea
+  bind:this={el}
+  bind:value
+  on:focus
+  on:blur
+  on:keypress
+  on:click
+  on:input
+  on:change
+  use:subscribe={listen}
+  {...$$restProps}
+/>

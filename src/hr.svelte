@@ -5,4 +5,4 @@
   export let listen = undefined;
 </script>
 
-<hr bind:this={el} use:subscribe={listen} {...$$props} />
+<hr bind:this={el} use:subscribe={listen} {...$$restProps} />

@@ -1,24 +1,67 @@
 <script>
-  import { A, Input } from '../../';
+  import { A, Input, Textarea } from '../../';
 
-  let clicked = false;
-  let focused = false;
-  let keydown = false;
-  let el, correct;
+  let A_clicked = false;
+  let A_el;
+  $: A_el_correct = A_el instanceof HTMLElement;
 
-  $: correct = el instanceof HTMLElement;
+  let Input_value;
+  let Input_on_input_value;
+  let Input_on_change_value;
+  let Input_focused = false;
+  let Input_keydown = false;
+
+  let Textarea_value;
+  let Textarea_on_input_value;
+  let Textarea_on_change_value;
+  let Textarea_focused = false;
+  let Textarea_keydown = false;
 </script>
 
 <h2>A</h2>
-<A bind:el href="#" on:click|preventDefault={() => clicked = true}>Howdy!</A>
+<A
+  bind:el={A_el}
+  href="#"
+  on:click={() => A_clicked = true}
+>Howdy!</A>
 
 <h3>Results</h3>
-<label><input type="checkbox" disabled bind:checked={clicked} /> Click</label><br>
-<label><input type="checkbox" disabled bind:checked={correct} /> Element</label>
+<label><input type="checkbox" disabled bind:checked={A_clicked} /> Click</label><br>
+<label><input type="checkbox" disabled bind:checked={A_el_correct} /> Element</label>
 
-<h2>Input</h2>
-<Input type="text" on:focus={() => focused = true} listen={{ keydown: () => keydown = true}} />
+<h2>Input type="text"</h2>
+<label>
+  Text input:
+  <Input
+    type="text"
+    bind:value={Input_value}
+    on:input={(event) => Input_on_input_value = event.target.value}
+    on:change={(event) => Input_on_change_value = event.target.value}
+    on:focus={() => Input_focused = true}
+    listen={{ keydown: () => Input_keydown = true}}
+  />
+</label>
 
 <h3>Results</h3>
-<label><input type="checkbox" disabled bind:checked={focused} /> Focus</label><br>
-<label><input type="checkbox" disabled bind:checked={keydown} /> listen</label>
+<div><label>bind:value: <input type="input" disabled value={Input_value} /></label></div>
+<div><label>on:input: <input type="input" disabled value={Input_on_input_value} /></label></div>
+<div><label>on:change: <input type="input" disabled value={Input_on_change_value} /></label></div>
+<label><input type="checkbox" disabled bind:checked={Input_focused} /> on:focus</label><br>
+<label><input type="checkbox" disabled bind:checked={Input_keydown} /> listen: keydown</label>
+
+<h2>Textarea</h2>
+<Textarea
+  type="text"
+  bind:value={Textarea_value}
+  on:input={(event) => Textarea_on_input_value = event.target.value}
+  on:change={(event) => Textarea_on_change_value = event.target.value}
+  on:focus={() => Textarea_focused = true}
+  listen={{ keydown: () => Textarea_keydown = true }}
+/>
+
+<h3>Results</h3>
+<div><label>bind:value: <input type="input" disabled value={Textarea_value} /></label></div>
+<div><label>on:input: <input type="input" disabled value={Textarea_on_input_value} /></label></div>
+<div><label>on:change: <input type="input" disabled value={Textarea_on_change_value} /></label></div>
+<label><input type="checkbox" disabled bind:checked={Textarea_focused} /> on:focus</label><br>
+<label><input type="checkbox" disabled bind:checked={Textarea_keydown} /> listen: keydown</label>

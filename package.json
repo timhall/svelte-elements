@@ -33,7 +33,7 @@
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-svelte": "^5.0.3",
     "serve": "^11.0.0",
-    "svelte": "^3.0.0"
+    "svelte": "^3.26.0"
   },
   "prettier": {
     "singleQuote": true,

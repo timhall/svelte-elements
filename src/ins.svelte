@@ -5,4 +5,4 @@
   export let listen = undefined;
 </script>
 
-<ins bind:this={el} on:focus on:blur on:keypress on:click use:subscribe={listen} {...$$props}><slot /></ins>
+<ins bind:this={el} on:focus on:blur on:keypress on:click use:subscribe={listen} {...$$restProps}><slot /></ins>

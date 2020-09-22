@@ -33,7 +33,7 @@ for (const tag of tags) {
     export let listen = undefined;
   </script>
 
-  <${tag} bind:this={el} ${events} {...$$props}${isVoid(tag) ? ' />' : `><slot /></${tag}>`}\n`;
+  <${tag} bind:this={el} ${events} {...$$restProps}${isVoid(tag) ? ' />' : `><slot /></${tag}>`}\n`;
 
   writeFileSync(path, data, 'utf8');
   list.add(`export { default as ${capitalize(tag)} } from './${tag}.svelte';`);
