@@ -5,4 +5,4 @@
   export let listen = undefined;
 </script>
 
-<textarea bind:this={el} on:focus on:blur on:keypress on:click use:subscribe={listen} {...$$props}><slot /></textarea>
+<textarea bind:this={el} on:focus on:blur on:keypress on:click use:subscribe={listen} {...$$props}></textarea>
